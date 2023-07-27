@@ -36,10 +36,5 @@ int main()
 			cout << "\n\tIncorrect, please repeat"<<endl;
 			break;
 		}
-		
-		
-			
-		
-
 	} while (choose !=0);
 }
