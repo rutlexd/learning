@@ -31,7 +31,7 @@ int main() {
 
 	index>=0
 		? cout << key << " in this list " << index
-		: cout << "nooooooo";
+		: cout << "not in this list";
 
 
 
