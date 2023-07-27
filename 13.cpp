@@ -14,7 +14,7 @@ int main() {
 	cout << "enter years\n";
 	cin >> years;
 	while (a <= years) {
-		profit = deposit + (deposit * (prothent * 0.01));
+		profit = deposit + (deposit * (prothent * 0.01)); /*some edit formula*/
 		cout << a++ << " years " << "u profit = " << profit << " = " << deposit << " + " << deposit * (prothent * 0.01) << endl;
 		deposit = profit;
 
