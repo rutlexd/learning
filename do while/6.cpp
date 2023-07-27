@@ -2,8 +2,8 @@
 using namespace std;
 int main()
 {
-	int people;
-	int uaspeak;
+	double people;
+	double uaspeak;
 
 	do
 	{
@@ -15,6 +15,6 @@ int main()
 		cout << "\n\tHow many people speak Ukrainian?(>0)\n\t\t";
 		cin >> uaspeak;
 	} while (uaspeak <= 0);
-
-	cout << "\n\tU speak Ukrainian with " << people / 100 * uaspeak << "% chance!" << endl;
+	double result = uaspeak / people * 100;
+	cout << "\n\tU speak Ukrainian with " <<result<< "% chance!" << endl;
 }
