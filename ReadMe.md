@@ -1,3 +1,3 @@
 # Learning
 Hi, its my its my learning way :)
-https://drive.google.com/file/d/1AgDATj_q3TQm3AGfE0rmNZLLJI32OTJZ/view?usp=drive_link
+https://drive.google.com/drive/folders/1VOBk6kdt1KMnFBI_PtqfqQ1NqOsp1wPg?usp=drive_link
