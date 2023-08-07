@@ -10,11 +10,7 @@ string devTime()
 
     time_t t = time(nullptr);
     tm* now = localtime(&t);
- 
 
-
-
- 
  int a, b, c, d, e, f, x = 0, y = 0;
  int leap, k;
  int sets[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
