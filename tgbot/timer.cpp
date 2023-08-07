@@ -13,18 +13,11 @@ string devTime()
  
 
 
-    setlocale(LC_ALL, "ukr");
 
  
  int a, b, c, d, e, f, x = 0, y = 0;
  int leap, k;
  int sets[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-setlocale(LC_CTYPE, "rus");
-//cout << "Введiть початкову дату (через пробiл) : ";
-//cin >> a >> b >> c;
-//cout << "Введiть кiнцеву дату (через пробiл) : ";
-//cin >> d >> e >> f;
-
 
 
 a = 18;
