@@ -3,7 +3,7 @@
 #include "timer.cpp"
 
 int main() {
-    TgBot::Bot bot("Token");
+    TgBot::Bot bot("5855560455:AAHnqYtZlBMnX7ty0DY4G-4SzPdZ1LbPJb8");
     bot.getEvents().onCommand("start", [&bot](TgBot::Message::Ptr message) {
         bot.getApi().sendMessage(message->chat->id, "Hi!");
     });

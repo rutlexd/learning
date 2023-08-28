@@ -1,72 +1,27 @@
-#include <chrono>
-#include <ctime>
+#include <cstdio>
 #include <string>
+#include <ctime>
 using namespace std;
-string devTime()
-{
- setlocale(LC_ALL, "ukr");
+string devTime() {
+    // Get the current timestamp in seconds since the epoch
+    time_t now = time(nullptr);
 
-    time_t t = time(nullptr);
-    tm* now = localtime(&t);
- 
- int dayF, mounthF, yearF, dayS, mounthS, yesrS, x = 0, y = 0;
- int leap, k;
- int mounths[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    // Create a tm structure for July 18, 2023, and set the desired date and time
+    tm target_time = {};
+    target_time.tm_year = 2023 - 1900; // Years since 1900
+    target_time.tm_mon = 6; // Months since January (0-based, so 6 for July)
+    target_time.tm_mday = 18; /S Day of the month
 
-dayF = 18;
-mounthF = 7;
-yearF = 2023;
-dayS = now->tm_mday;
-mounthS = now->tm_mon + 1;
-yesrS = now->tm_year + 1900;
+    // Get the timestamp for July 18, 2023, in seconds since the epoch
+    time_t target_timestamp = mktime(&target_time);
 
-//высчитываем сколько было высокосных лет в заданном интервале
-leap = yearF;
-k = 0;
-while (leap <= yesrS)
-{
+    // Calculate the time difference in seconds
+    time_t time_difference = now - target_timestamp;
 
- if (leap % 4 == 0 && leap % 100 != 0 || leap % 400 == 0)
- {
-  k = k + 1;
- }
+    // Convert the time difference to days
+    int day = (time_difference / 3600)/24;
 
- leap++;
-
-}
-
-
-//высчитываем сколько прошло дней в году до начальной даты
-for(int i =1; i<=12;i++){
-    if(i == mounthF){
-        for(int j = 2;j<mounthF+1;j++){
-            x += mounths[j-1];
-        }
-        x += dayF;
-    }
-}
-
-
-
-//высчитываем сколько прошло дней в году до конечной даты
-for(int i =1; i<=12;i++){
-    if(i==mounthS){ 
-        for(int j = 2;j<mounthS+1;j++){
-            y += mounths[j-1];
-        }
-    y += dayS;
-    }
-}
-if ((yearF % 4 == 0 && leap % 100 != 0 || leap % 400 == 0)&&mounthF>2) { k = k - 1;} //если начальная дата высокосный год больше 29 февраля то отнимаем 1 от кол-во высокосных лет
-if ((yesrS % 4 == 0 && leap % 100 != 0 || leap % 400 == 0) && dayS<=29&&mounthS<3) { k = k - 1;} //если конечная дата до 29 февраля то отнимаем 1 от высокосных лет
-int resultTime = 0;
-if (yearF == yesrS)
-{
- resultTime = (y - x)+k; 
-}
-else
-resultTime = (yesrS - yearF) * 365 + ((y - x)+k);
-string days = to_string(resultTime);
+string days = to_string(day);
 string textStudy1 = "U study c++ ";
 string textStudy2 = " days";
 string res = textStudy1 + days + textStudy2;
