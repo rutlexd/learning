@@ -12,9 +12,6 @@ int main() {
         if (StringTools::startsWith(message->text, "/start")) {
             return;
         }
-        if (StringTools::startsWith(message->text, "/love")) {
-            bot.getApi().sendMessage(message->chat->id, "I love Nadia, kiss u my baby:)");
-        }
         if (StringTools::startsWith(message->text, "/study")) {
             bot.getApi().sendMessage(message->chat->id, devTime());
         }
