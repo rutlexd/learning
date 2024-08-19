@@ -11,7 +11,7 @@ int main() {
 		cin >> numbers[i];
 	}
 	for (int i = 0; i < num; i++) {
-		for(int j = i+1;j<num;j++)
+		for(int j = i + 1;j < num; j++)
 			if (numbers[i] > numbers[j]) {
 				temp = numbers[i];
 				numbers[i] = numbers[j];
@@ -19,7 +19,7 @@ int main() {
 			}
 	}
 
-	for (int g = 0; g < num; g++) {
-		cout << numbers[g]<<" ";
+	for (int i = 0; i < num; i++) {
+		cout << numbers[i]<<" ";
 	}
 }
